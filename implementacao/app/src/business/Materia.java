@@ -4,26 +4,44 @@ import java.util.List;
 
 public class Materia implements Gerenciavel {
 
-	private String Nome;
+	private String nome;
 
-	private int Preco;
+	private int preco;
 
-	private List<Aluno> Alunos;
+	private List<Aluno> alunos;
 
 	private int MIN_ALUNOS = 3;
 
 	private int MAX_ALUNOS = 60;
 
-	private boolean Ativa;
+	private boolean ativa;
 
-	private boolean Obrigatoria;
+	private boolean obrigatoria;
+
+	public boolean isObrigatoria() {
+		return obrigatoria;
+	}
 
 	private List<Curso> cursos;
 
 	private List<Professor> professores;
 
 	public boolean estaAtiva() {
-		return false;
+		int numAlunos = this.alunos.size();
+
+		if(numAlunos >= MIN_ALUNOS && numAlunos <= MAX_ALUNOS) {
+			this.ativa = true;
+		} else {
+			this.ativa = false;
+		}
+
+		return this.ativa;
+	}
+
+	public void addAluno(Aluno aluno) {
+		if(estaAtiva()) {
+			alunos.add(aluno);
+		}
 	}
 
 }
