@@ -8,20 +8,20 @@ public class Aluno extends Usuario implements Gerenciavel {
 
 	private Semestre semestre;
 
-	private Curso Curso;
+	private Curso curso;
 
-	private List<Observer> Observers;
+	private List<Observer> observers;
 
 	private double valorAPagar;
 
 	private Observer observer;
 
 	public void attach(Observer observer) {
-
+		this.observers.add(observer);
 	}
 
-	public void notifyObservers() {
-
+	public void notifyAllObservers() {
+		this.observers.stream().forEach(observerController -> observerController.notify(this));
 	}
 
 	public void cancelarMateria(String materia) {
@@ -29,7 +29,7 @@ public class Aluno extends Usuario implements Gerenciavel {
 	}
 
 	public void matricular(String materia) {
-
+		this.notifyAllObservers();
 	}
 
 	public void setValorAPAgar(long valorAPagar) {
