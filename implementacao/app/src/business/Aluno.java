@@ -1,6 +1,8 @@
+package business;
+
 import java.util.List;
 
-public class Aluno extends Usuário implements Gerenciavel {
+public class Aluno extends Usuario implements Gerenciavel {
 
 	private int MATRICULA;
 

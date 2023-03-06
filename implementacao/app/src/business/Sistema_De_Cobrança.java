@@ -1,6 +1,8 @@
-public class Sistema_De_Cobrança implements Observer {
+package business;
 
-	private int attribute17;
+public class Sistema_De_Cobrança extends Observer {
+
+	private Aluno aluno;
 
 	public void notify(Aluno aluno) {
 
@@ -9,5 +11,4 @@ public class Sistema_De_Cobrança implements Observer {
 	private void cobrar(Aluno aluno) {
 
 	}
-
 }

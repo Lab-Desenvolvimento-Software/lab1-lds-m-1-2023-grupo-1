@@ -1,4 +1,6 @@
-public interface Observer {
+package business;
+
+public abstract class Observer {
 
 	public abstract void notify(Aluno aluno);
 
