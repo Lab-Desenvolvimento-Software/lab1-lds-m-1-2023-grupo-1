@@ -1,0 +1,115 @@
+Index: implementacao/app/src/business/Sistema_De_Cobrança.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Sistema_De_Cobrança implements Observer {\r\n\r\n\tprivate int attribute17;\r\n\r\n\tpublic void notify(Aluno aluno) {\r\n\r\n\t}\r\n\r\n\tprivate void cobrar(Aluno aluno) {\r\n\r\n\t}\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/implementacao/app/src/business/Sistema_De_Cobrança.java b/implementacao/app/src/business/Sistema_De_Cobrança.java
+--- a/implementacao/app/src/business/Sistema_De_Cobrança.java	
++++ b/implementacao/app/src/business/Sistema_De_Cobrança.java	
+@@ -1,13 +1,17 @@
+-public class Sistema_De_Cobrança implements Observer {
++package business;
+ 
+-	private int attribute17;
++public class Sistema_De_Cobrança extends Observer {
+ 
++	private Sistema_De_Cobrança(Aluno aluno) {
++		super(aluno);
++	}
++
++	@Override
+ 	public void notify(Aluno aluno) {
+-
++		this.cobrar(aluno);
+ 	}
+ 
+ 	private void cobrar(Aluno aluno) {
+-
++		aluno.setValorAPagar(1500L);
+ 	}
+-
+ }
+Index: implementacao/app/src/business/Observer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public interface Observer {\r\n\r\n\tpublic abstract void notify(Aluno aluno);\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/implementacao/app/src/business/Observer.java b/implementacao/app/src/business/Observer.java
+--- a/implementacao/app/src/business/Observer.java	
++++ b/implementacao/app/src/business/Observer.java	
+@@ -1,5 +1,13 @@
+-public interface Observer {
++package business;
++
++public abstract class Observer {
++
++	private Aluno aluno;
++
++	public Observer(Aluno aluno) {
++		this.aluno = aluno;
++		this.aluno.attach(this);
++	}
+ 
+ 	public abstract void notify(Aluno aluno);
+-
+ }
+Index: implementacao/app/src/business/Aluno.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.List;\r\n\r\npublic class Aluno extends Usuário implements Gerenciavel {\r\n\r\n\tprivate int MATRICULA;\r\n\r\n\tprivate Semestre semestre;\r\n\r\n\tprivate Curso Curso;\r\n\r\n\tprivate List<Observer> Observers;\r\n\r\n\tprivate double valorAPagar;\r\n\r\n\tprivate Observer observer;\r\n\r\n\tpublic void attach(Observer observer) {\r\n\r\n\t}\r\n\r\n\tpublic void notifyObservers() {\r\n\r\n\t}\r\n\r\n\tpublic void cancelarMateria(String materia) {\r\n\r\n\t}\r\n\r\n\tpublic void matricular(String materia) {\r\n\r\n\t}\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/implementacao/app/src/business/Aluno.java b/implementacao/app/src/business/Aluno.java
+--- a/implementacao/app/src/business/Aluno.java	
++++ b/implementacao/app/src/business/Aluno.java	
+@@ -1,25 +1,35 @@
++package business;
++
+ import java.util.List;
+ 
+-public class Aluno extends Usuário implements Gerenciavel {
++public class Aluno extends Usuario implements Gerenciavel {
+ 
+ 	private int MATRICULA;
+ 
+ 	private Semestre semestre;
+ 
+-	private Curso Curso;
++	private Curso curso;
+ 
+-	private List<Observer> Observers;
++	private List<Observer> observers;
+ 
+ 	private double valorAPagar;
+ 
+ 	private Observer observer;
+ 
+ 	public void attach(Observer observer) {
+-
++		observers.add(observer);
+ 	}
+ 
+ 	public void notifyObservers() {
++		observers.stream().forEach(observer -> observer.notify(this));
++	}
+ 
++	public void setValorAPagar(double valorAPagar) {
++		this.valorAPagar = valorAPagar;
++	}
++
++	public double getValorAPagar() {
++		return valorAPagar;
+ 	}
+ 
+ 	public void cancelarMateria(String materia) {
+@@ -29,5 +39,4 @@
+ 	public void matricular(String materia) {
+ 
+ 	}
+-
+ }

@@ -1,0 +1,36 @@
+Index: implementacao/app/src/business/Usuário.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/implementacao/app/src/business/Usuário.java b/implementacao/app/src/business/Usuario.java
+rename from implementacao/app/src/business/Usuário.java
+rename to implementacao/app/src/business/Usuario.java
+--- a/implementacao/app/src/business/Usuário.java	
++++ b/implementacao/app/src/business/Usuario.java	
+@@ -1,6 +1,7 @@
+ 
++package business;
+ 
+-public abstract class Usuário {
++public abstract class Usuario {
+ 
+ 	private String Nome;
+ 
+Index: implementacao/app/src/business/Secretária.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/implementacao/app/src/business/Secretária.java b/implementacao/app/src/business/Secretaria.java
+rename from implementacao/app/src/business/Secretária.java
+rename to implementacao/app/src/business/Secretaria.java
+--- a/implementacao/app/src/business/Secretária.java	
++++ b/implementacao/app/src/business/Secretaria.java	
+@@ -1,4 +1,5 @@
+-public class Secretária extends Usuário {
++
++public class Secretaria extends Usuário {
+ 
+ 	private int ID_SECRETARIA;
+ 
