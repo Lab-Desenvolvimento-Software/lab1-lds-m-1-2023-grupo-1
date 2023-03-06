@@ -8,5 +8,8 @@
 - Eu, como aluno, desejo pagar minhas disciplinas matriculadas para continuar cursando-as.
 - Eu, como aluno, desejo cancelar minhas disciplinas matriculadas para evitar transtornos.
 - Eu, como professor, desejo visualizar os alunos matriculados na minha disciplina para ter um controle da turma.
-- Eu, como funcionário do sistema de cobranças, desejo ser notificado quando um aluno se inscrever no semestre para efetuar a cobrança.
-- Eu, como funcionário da secretaria, desejo gerar o currículo para a gestão acadêmica.
+- Eu, como sistema de cobranças, desejo ser notificado quando um aluno se inscrever no semestre para efetuar a cobrança.
+- Eu, como secretária, desejo gerar o currículo para a gestão acadêmica.
+- Eu, como secretária, desejo criar, ler, remover e atualizar informações sobre disciplinas. 
+- Eu, como secretária, desejo criar, ler, remover e atualizar informações sobre professores. 
+- Eu, como secretária, desejo criar, ler, remover e atualizar informações sobre alunos. 
