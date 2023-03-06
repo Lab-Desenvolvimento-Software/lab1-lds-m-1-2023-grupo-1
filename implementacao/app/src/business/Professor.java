@@ -1,6 +1,8 @@
+package business;
+
 import java.util.List;
 
-public class Professor extends Usuário implements Gerenciavel {
+public class Professor extends Usuario implements Gerenciavel {
 
 	private int ID_PROFESSOR;
 

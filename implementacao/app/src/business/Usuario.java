@@ -1,6 +1,6 @@
+package business;
 
-
-public abstract class Usuário {
+public abstract class Usuario {
 
 	private String Nome;
 

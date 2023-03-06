@@ -1,3 +1,5 @@
+package business;
+
 public class CrudMateria implements Crud {
 
 	public boolean cadastrar(Gerenciavel gerenciavel) {

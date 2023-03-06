@@ -1,4 +1,6 @@
-public class Secretária extends Usuário {
+package business;
+
+public class Secretaria extends Usuario {
 
 	private int ID_SECRETARIA;
 

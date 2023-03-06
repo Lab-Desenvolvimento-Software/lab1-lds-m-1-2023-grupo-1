@@ -1,3 +1,5 @@
+package business;
+
 public class CrudProfessor implements Crud {
 
 	public boolean cadastrar(Gerenciavel gerenciavel) {
