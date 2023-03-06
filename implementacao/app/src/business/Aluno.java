@@ -32,4 +32,7 @@ public class Aluno extends Usuario implements Gerenciavel {
 
 	}
 
+	public void setValorAPAgar(long valorAPagar) {
+		this.valorAPagar = valorAPagar;
+	}
 }

@@ -4,11 +4,16 @@ public class Sistema_De_Cobrança extends Observer {
 
 	private Aluno aluno;
 
-	public void notify(Aluno aluno) {
+	public Sistema_De_Cobrança(Aluno aluno) {
+		super(aluno);
+	}
 
+	@Override
+	public void notify(Aluno aluno) {
+		this.cobrar(aluno);
 	}
 
 	private void cobrar(Aluno aluno) {
-
+		aluno.setValorAPAgar(1500L);
 	}
 }
