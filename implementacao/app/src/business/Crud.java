@@ -1,5 +1,6 @@
 package business;
 
+import java.util.List;
 public interface Crud {
 
 	public abstract boolean cadastrar(Gerenciavel gerenciavel);

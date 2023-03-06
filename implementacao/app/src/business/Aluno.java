@@ -2,7 +2,7 @@ package business;
 
 import java.util.List;
 
-public class Aluno extends Usuario implements Gerenciavel {
+public class Aluno extends Usuário implements Gerenciavel {
 
 	private int MATRICULA;
 
@@ -15,6 +15,11 @@ public class Aluno extends Usuario implements Gerenciavel {
 	private double valorAPagar;
 
 	private Observer observer;
+
+	public Aluno(String nome, String senha, Curso curso) {
+		super(nome, senha);
+		// TODO Auto-generated constructor stub
+	}
 
 	public void attach(Observer observer) {
 
@@ -32,4 +37,7 @@ public class Aluno extends Usuario implements Gerenciavel {
 
 	}
 
+	public String toString(){
+		return ("Nome: " + super.getNome() + " Ocupação: aluno");
+	}
 }
