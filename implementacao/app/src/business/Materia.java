@@ -1,12 +1,13 @@
 package business;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Materia implements Gerenciavel {
 
 	private String nome;
 
-	private int preco;
+	private double preco;
 
 	private List<Aluno> alunos;
 
@@ -17,6 +18,15 @@ public class Materia implements Gerenciavel {
 	private boolean ativa;
 
 	private boolean obrigatoria;
+
+	public Materia(String nome, double preco, boolean obrigatoria) {
+		alunos = new ArrayList<>();
+
+		this.nome = nome;
+		this.preco = preco;
+		this.obrigatoria = obrigatoria;
+		this.ativa = true;
+	}
 
 	public boolean isObrigatoria() {
 		return obrigatoria;

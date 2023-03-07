@@ -1,5 +1,7 @@
 package business;
 
+import org.junit.jupiter.api.function.Executable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +49,7 @@ public class Aluno extends Usuario implements Gerenciavel {
 		return false;
 	}
 
-	public void matricular(Materia materia) {
+	public boolean matricular(Materia materia) throws IndexOutOfBoundsException {
 		if(quantMateriasMatriculadas()) {
 			materia.addAluno(this);
 
@@ -58,7 +60,11 @@ public class Aluno extends Usuario implements Gerenciavel {
 			}
 
 			this.notifyAllObservers();
+
+			return true;
 		}
+
+		throw new IndexOutOfBoundsException("É possível matricular em apenas 4 disciplinas obrigatórias e 2 optativas");
 	}
 
 	public void setValorAPAgar(long valorAPagar) {
