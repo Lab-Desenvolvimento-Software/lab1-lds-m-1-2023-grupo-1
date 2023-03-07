@@ -4,16 +4,16 @@ import java.util.List;
 
 public class Curso {
 
-	private String Nome;
+	private String nome;
 
-	private int QtdCreditos;
+	private int qtdCreditos;
 
-	private List<Semestre> Semestres;
+	private List<Semestre> semestres;
 
 	
 	public Curso(String nome, int qtdCreditos) {
-		Nome = nome;
-		QtdCreditos = qtdCreditos;
+		this.nome = nome;
+		this.qtdCreditos = qtdCreditos;
 	}
 
 

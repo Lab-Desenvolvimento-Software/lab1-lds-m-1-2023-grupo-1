@@ -6,13 +6,12 @@ import java.util.ArrayList;
 public class Professor extends Usuario implements Gerenciavel {
 
 	private List<Materia> materias;
+	private int ID_PROFESSOR;
 
 	public Professor(String nome, String senha) {
 		super(nome, senha);
 		materias = new ArrayList<Materia>();
 	}
-
-	private int ID_PROFESSOR;
 
 	public List<Aluno> getTurma(String nome) {
 		for(Materia materia : materias){
@@ -31,8 +30,8 @@ public class Professor extends Usuario implements Gerenciavel {
 		return ID_PROFESSOR;
 	}
 
-	public void setID_PROFESSOR(int iD_PROFESSOR) {
-		ID_PROFESSOR = iD_PROFESSOR;
+	public void setID_PROFESSOR(int ID_PROFESSOR) {
+		this.ID_PROFESSOR = ID_PROFESSOR;
 	}
 
 }

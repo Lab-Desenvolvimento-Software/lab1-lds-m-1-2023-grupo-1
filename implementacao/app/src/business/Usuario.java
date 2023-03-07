@@ -1,21 +1,19 @@
 package business;
 
-
-
 public abstract class Usuario {
 
-	private String Nome;
+	private String nome;
 
-	private String Senha;
+	private String senha;
 
 
 
 	public Usuario(String nome, String senha) {
-		this.Nome = nome;
-		this.Senha = senha;
+		this.nome = nome;
+		this.senha = senha;
 	}
 
 	public String getNome(){
-		return this.Nome;
+		return this.nome;
 	}
 }
