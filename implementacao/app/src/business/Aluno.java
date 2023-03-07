@@ -38,7 +38,11 @@ public class Aluno extends Usuario implements Gerenciavel {
 	}
 
 	public void cancelarMateria(Materia materia) {
-
+		if(materiasObrigatoriasMatriculadas.contains(materia) || optativasMatriculadas.contains(materia)) {
+			materia.removeAluno(this);
+			materiasObrigatoriasMatriculadas.remove(materia);
+			optativasMatriculadas.remove(materia);
+		}
 	}
 
 	private boolean quantMateriasMatriculadas() {

@@ -54,4 +54,8 @@ public class Materia implements Gerenciavel {
 		}
 	}
 
+	public void removeAluno(Aluno aluno) {
+		alunos.remove(aluno);
+	}
+
 }
