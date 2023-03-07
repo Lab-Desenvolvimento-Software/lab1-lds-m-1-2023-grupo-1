@@ -21,4 +21,12 @@ public class Professor extends Usuário implements Gerenciavel {
 		return ("Nome: " + super.getNome() + " Ocupação: professor");
 	}
 
+	public int getID_PROFESSOR() {
+		return ID_PROFESSOR;
+	}
+
+	public void setID_PROFESSOR(int iD_PROFESSOR) {
+		ID_PROFESSOR = iD_PROFESSOR;
+	}
+
 }

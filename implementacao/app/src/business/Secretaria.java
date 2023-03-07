@@ -8,15 +8,19 @@ public class Secretaria extends Usuário {
 	private int ID_SECRETARIA;
 	private CrudAluno crudAluno;
 	private CrudProfessor crudProfessor;
+	private CrudMateria crudMateria;
+	//Esses list vão sumir depois de ter os arquivos salvos
 	private List<Gerenciavel> usuarios;
+	public List<Gerenciavel> materias;
 
 	public Secretaria(String nome, String senha, int id) {
 		super(nome, senha);
 		this.ID_SECRETARIA = id;
 		usuarios = new ArrayList<Gerenciavel>();
+		materias = new ArrayList<Gerenciavel>();
 	}
 
-	public List<Gerenciavel> criar(Gerenciavel gerenciavel) {
+	public void criar(Gerenciavel gerenciavel) {
 
 		if (gerenciavel.getClass().getTypeName() == "business.Aluno") {
 			if (crudAluno == null) {
@@ -24,7 +28,6 @@ public class Secretaria extends Usuário {
 			}
 			if(crudAluno.cadastrar(gerenciavel)) {
 				usuarios.add(gerenciavel);
-				return usuarios;
 			}
 			
 		} else {
@@ -34,12 +37,20 @@ public class Secretaria extends Usuário {
 				}
 				if(crudProfessor.cadastrar(gerenciavel)) {
 					usuarios.add(gerenciavel);
-					return usuarios;
 				}
 				
+			}else {
+				if (gerenciavel.getClass().getTypeName() == "business.Materia") {
+					if (crudMateria == null) {
+						crudMateria = new CrudMateria();
+					}
+					if(crudMateria.cadastrar(gerenciavel)) {
+						materias.add(gerenciavel);
+					}
+					
+				}
 			}
 		}
-		return null;
 	}
 
 	public void alterar(Gerenciavel gerenciavel) {
@@ -60,6 +71,9 @@ public class Secretaria extends Usuário {
 
 	public List<Gerenciavel> getAllUsers() {
 		return usuarios;
+	}
+	public List<Gerenciavel> getAllMaterias() {
+		return materias;
 	}
 
 }

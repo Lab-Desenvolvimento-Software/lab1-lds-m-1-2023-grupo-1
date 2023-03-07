@@ -5,12 +5,14 @@ import java.util.List;
 
 public class CrudAluno implements Crud {
 
+	//Esses list vão sumir depois de ter os arquivos salvos
 	private List<Gerenciavel> lista;
 
 	public CrudAluno(){
 		lista = new ArrayList<Gerenciavel>();
 	}
 	public boolean cadastrar(Gerenciavel gerenciavel) {
+		((Aluno)gerenciavel).setMATRICULA(lista.size());
 		lista.add(gerenciavel);
 		return true;
 	}
@@ -22,6 +24,5 @@ public class CrudAluno implements Crud {
 	public boolean excluir(Gerenciavel gerenciavel) {
 		return false;
 	}
-
 
 }

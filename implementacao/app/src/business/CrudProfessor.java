@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CrudProfessor implements Crud {
+	//Esses list vão sumir depois de ter os arquivos salvos
 	private static List<Gerenciavel> lista;
 	
 	public CrudProfessor(){
@@ -11,6 +12,7 @@ public class CrudProfessor implements Crud {
 	}
 
 	public boolean cadastrar(Gerenciavel gerenciavel) {
+		((Professor)gerenciavel).setID_PROFESSOR(lista.size());
 		lista.add(gerenciavel);
 		return true;
 	}

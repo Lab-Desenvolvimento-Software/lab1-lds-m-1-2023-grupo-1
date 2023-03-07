@@ -26,5 +26,68 @@ public class Materia implements Gerenciavel {
 	public boolean estaAtiva() {
 		return false;
 	}
+	
+	public Materia(String nome, int preco, Boolean status) {
+		this.setNome(nome);
+		this.setPreco(preco);
+		this.setAtiva(status);
+		
+	}
+
+	public String getNome() {
+		return Nome;
+	}
+
+	public void setNome(String nome) {
+		Nome = nome;
+	}
+
+	public int getPreco() {
+		return Preco;
+	}
+
+	public void setPreco(int preco) {
+		Preco = preco;
+	}
+
+	public List<Aluno> getAlunos() {
+		return Alunos;
+	}
+
+	public void setAlunos(List<Aluno> alunos) {
+		Alunos = alunos;
+	}
+
+	public void setAtiva(boolean ativa) {
+		Ativa = ativa;
+	}
+
+	public boolean isObrigatoria() {
+		return Obrigatoria;
+	}
+
+	public void setObrigatoria(boolean obrigatoria) {
+		Obrigatoria = obrigatoria;
+	}
+
+	public List<Curso> getCursos() {
+		return cursos;
+	}
+
+	public void setCursos(List<Curso> cursos) {
+		this.cursos = cursos;
+	}
+
+	public List<Professor> getProfessores() {
+		return professores;
+	}
+
+	public void addProfessores(Professor professor) {
+		this.professores.add(professor);
+	}
+	
+	public String toString() {
+		return ("Nome da materia: " + this.Nome + " Obrigatoria: " + this.Obrigatoria);
+	}
 
 }

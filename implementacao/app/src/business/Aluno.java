@@ -18,7 +18,7 @@ public class Aluno extends Usuário implements Gerenciavel {
 
 	public Aluno(String nome, String senha, Curso curso) {
 		super(nome, senha);
-		// TODO Auto-generated constructor stub
+		this.setCurso(curso);
 	}
 
 	public void attach(Observer observer) {
@@ -39,5 +39,21 @@ public class Aluno extends Usuário implements Gerenciavel {
 
 	public String toString(){
 		return ("Nome: " + super.getNome() + " Ocupação: aluno");
+	}
+
+	public Curso getCurso() {
+		return Curso;
+	}
+
+	public void setCurso(Curso curso) {
+		Curso = curso;
+	}
+
+	public int getMATRICULA() {
+		return MATRICULA;
+	}
+
+	public void setMATRICULA(int mATRICULA) {
+		MATRICULA = mATRICULA;
 	}
 }
