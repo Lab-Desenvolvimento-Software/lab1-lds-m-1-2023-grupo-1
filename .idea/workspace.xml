@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41799a82-670a-4765-92c2-750ec4e75bd7" name="Changes" comment="[UPDATE] Implementação do método de cancelamento matricula e relacionados #4" />
+    <list default="true" id="41799a82-670a-4765-92c2-750ec4e75bd7" name="Changes" comment="[UPDATE] Atualização workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/implementacao/app/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/business/Aluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Materia.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/business/Materia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/business/Observer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/business/Professor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Sistema_De_Cobrança.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/business/Sistema_De_Cobrança.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/business/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Usuário.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/implementacao/app/src/teste/AlunoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/teste/AlunoTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +49,36 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <module name="lab1-lds-m-1-2023-grupo-1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Eclipse Adoptium/jdk-17.0.5.8-hotspot" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="src.App" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="lab1-lds-m-1-2023-grupo-1" />
       <method v="2">

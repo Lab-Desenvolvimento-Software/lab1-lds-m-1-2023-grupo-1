@@ -3,7 +3,7 @@ package business;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Secretaria extends Usuário {
+public class Secretaria extends Usuario {
 
 	private int ID_SECRETARIA;
 	private CrudAluno crudAluno;

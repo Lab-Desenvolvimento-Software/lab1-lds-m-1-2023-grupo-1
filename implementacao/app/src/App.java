@@ -26,8 +26,8 @@ public class App {
         Professor pteste1= new Professor("Jorge", "123");
         Professor pteste2= new Professor("Paula", "123");
         
-        Materia mteste = new Materia("Analise", 11, true);
-        Materia mteste1 = new Materia("Algoritmo", 5, false);
+        Materia mteste = new Materia("Analise", 11, true, true);
+        Materia mteste1 = new Materia("Algoritmo", 5, false, true);
         
         secretaria.criar(teste1);
         secretaria.criar(teste2);

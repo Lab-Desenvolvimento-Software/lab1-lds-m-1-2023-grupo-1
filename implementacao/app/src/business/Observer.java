@@ -8,5 +8,5 @@ public abstract class Observer {
 		this.aluno.attach(this);
 	}
 
-	public abstract void notify(Aluno aluno);
+	public abstract void notify(Aluno aluno, double preco);
 }

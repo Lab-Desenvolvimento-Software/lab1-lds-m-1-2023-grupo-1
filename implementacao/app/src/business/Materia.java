@@ -1,5 +1,6 @@
 package business;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Materia implements Gerenciavel {
@@ -18,7 +19,7 @@ public class Materia implements Gerenciavel {
 
 	private boolean obrigatoria;
 
-	public Materia(String nome, double preco, boolean obrigatoria, boolean status) {
+	public Materia(String nome, double preco, boolean status, boolean obrigatoria) {
 		alunos = new ArrayList<>();
 
 		this.setNome(nome);
@@ -28,7 +29,7 @@ public class Materia implements Gerenciavel {
 	}
 
 	public boolean isObrigatoria() {
-		return obrigatoria;
+		return this.obrigatoria;
 	}
 
 	private List<Curso> cursos;
@@ -57,11 +58,6 @@ public class Materia implements Gerenciavel {
 		alunos.remove(aluno);
 	}
 
-	public Materia(String nome, int preco, Boolean status) {
-
-
-	}
-
 	public String getNome() {
 		return this.nome;
 	}
@@ -79,7 +75,7 @@ public class Materia implements Gerenciavel {
 	}
 
 	public List<Aluno> getAlunos() {
-		return Alunos;
+		return this.alunos;
 	}
 
 	public void setAlunos(List<Aluno> alunos) {
@@ -88,10 +84,6 @@ public class Materia implements Gerenciavel {
 
 	public void setAtiva(boolean ativa) {
 		this.ativa = ativa;
-	}
-
-	public boolean isObrigatoria() {
-		return Obrigatoria;
 	}
 
 	public void setObrigatoria(boolean obrigatoria) {
@@ -116,6 +108,6 @@ public class Materia implements Gerenciavel {
 
 	@Override
 	public String toString() {
-		return ("Nome da materia: " + this.Nome + " Obrigatoria: " + this.Obrigatoria);
+		return ("Nome da materia: " + getNome() + " Obrigatoria: " + this.obrigatoria);
 	}
 }

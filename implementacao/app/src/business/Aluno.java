@@ -1,5 +1,6 @@
 package business;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Aluno extends Usuario implements Gerenciavel {
@@ -17,7 +18,7 @@ public class Aluno extends Usuario implements Gerenciavel {
 
 	private Observer observer;
 
-	public Aluno(Semestre semestre) {
+	public Aluno(String nome, String senha, Curso curso) {
 		super(nome, senha);
 		this.setCurso(curso);
 
@@ -25,16 +26,14 @@ public class Aluno extends Usuario implements Gerenciavel {
 		materiasObrigatoriasMatriculadas = new ArrayList<>();
 		optativasMatriculadas = new ArrayList<>();
 		MATRICULA++;
-
-		this.semestre = semestre;
 	}
 
 	public void attach(Observer observer) {
 		this.observers.add(observer);
 	}
 
-	public void notifyAllObservers() {
-		this.observers.stream().forEach(observerController -> observerController.notify(this));
+	public void notifyAllObservers(Materia materia) {
+		this.observers.stream().forEach(observerController -> observerController.notify(this, materia.getPreco()));
 	}
 
 	public void cancelarMateria(Materia materia) {
@@ -50,6 +49,7 @@ public class Aluno extends Usuario implements Gerenciavel {
 			return true;
 		}
 
+		return false;
 	}
 
 	public boolean matricular(Materia materia) throws IndexOutOfBoundsException {
@@ -62,7 +62,7 @@ public class Aluno extends Usuario implements Gerenciavel {
 				optativasMatriculadas.add(materia);
 			}
 
-			this.notifyAllObservers();
+			this.notifyAllObservers(materia);
 
 			return true;
 		}
@@ -70,7 +70,7 @@ public class Aluno extends Usuario implements Gerenciavel {
 		throw new IndexOutOfBoundsException("É possível matricular em apenas 4 disciplinas obrigatórias e 2 optativas");
 	}
 
-	public void setValorAPAgar(long valorAPagar) {
+	public void setValorAPAgar(double valorAPagar) {
 		this.valorAPagar = valorAPagar;
 	}
 	public String toString(){
@@ -78,11 +78,11 @@ public class Aluno extends Usuario implements Gerenciavel {
 	}
 
 	public Curso getCurso() {
-		return Curso;
+		return this.curso;
 	}
 
 	public void setCurso(Curso curso) {
-		Curso = curso;
+		this.curso = curso;
 	}
 
 	public int getMATRICULA() {
