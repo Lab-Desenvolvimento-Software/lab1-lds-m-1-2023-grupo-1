@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Aluno extends Usuario implements Gerenciavel {
 
-	private static int MATRICULA = 0;
+	private int MATRICULA;
 
 	private Semestre semestre;
 
@@ -25,7 +25,6 @@ public class Aluno extends Usuario implements Gerenciavel {
 		observers = new ArrayList<>();
 		materiasObrigatoriasMatriculadas = new ArrayList<>();
 		optativasMatriculadas = new ArrayList<>();
-		MATRICULA++;
 	}
 
 	public void attach(Observer observer) {
@@ -89,7 +88,7 @@ public class Aluno extends Usuario implements Gerenciavel {
 		return MATRICULA;
 	}
 
-	public void setMATRICULA(int mATRICULA) {
-		MATRICULA = mATRICULA;
+	public void setMATRICULA(int matricula) {
+		MATRICULA = matricula;
 	}
 }

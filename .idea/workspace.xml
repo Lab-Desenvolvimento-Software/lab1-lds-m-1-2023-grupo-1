@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41799a82-670a-4765-92c2-750ec4e75bd7" name="Changes" comment="[UPDATE] Atualização workspace.xml">
+    <list default="true" id="41799a82-670a-4765-92c2-750ec4e75bd7" name="Changes" comment="[FIX] Correção de merge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/implementacao/app/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/business/Aluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Materia.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/business/Materia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/business/Observer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/business/Professor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Sistema_De_Cobrança.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/business/Sistema_De_Cobrança.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/business/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacao/app/src/business/Usuário.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacao/app/src/teste/AlunoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/implementacao/app/src/teste/AlunoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +95,14 @@
       <option name="presentableId" value="Default" />
       <updated>1678151175282</updated>
     </task>
+    <task id="LOCAL-00001" summary="[FIX] Correção de merge">
+      <created>1678153563195</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678153563195</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,6 +118,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[UPDATE]" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE]" />
+    <MESSAGE value="[FIX] Correção de merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FIX] Correção de merge" />
   </component>
 </project>
