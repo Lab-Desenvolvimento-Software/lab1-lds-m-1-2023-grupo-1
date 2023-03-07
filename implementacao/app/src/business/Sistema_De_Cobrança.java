@@ -1,8 +1,8 @@
 package business;
 
-public class Sistema_De_Cobrança extends Observer {
+public class Sistema_De_Cobrança implements Observer {
 
-	private Aluno aluno;
+	private int attribute17;
 
 	public Sistema_De_Cobrança(Aluno aluno) {
 		super(aluno);
@@ -16,4 +16,5 @@ public class Sistema_De_Cobrança extends Observer {
 	private void cobrar(Aluno aluno) {
 		aluno.setValorAPAgar(1500L);
 	}
+
 }

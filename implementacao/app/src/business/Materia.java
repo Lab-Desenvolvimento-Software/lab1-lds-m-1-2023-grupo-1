@@ -1,6 +1,5 @@
 package business;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Materia implements Gerenciavel {
@@ -19,13 +18,13 @@ public class Materia implements Gerenciavel {
 
 	private boolean obrigatoria;
 
-	public Materia(String nome, double preco, boolean obrigatoria) {
+	public Materia(String nome, double preco, boolean obrigatoria, boolean status) {
 		alunos = new ArrayList<>();
 
-		this.nome = nome;
-		this.preco = preco;
-		this.obrigatoria = obrigatoria;
-		this.ativa = true;
+		this.setNome(nome);
+		this.setPreco(preco);
+		this.setAtiva(status);
+		this.setObrigatoria(obrigatoria);
 	}
 
 	public boolean isObrigatoria() {
@@ -58,4 +57,65 @@ public class Materia implements Gerenciavel {
 		alunos.remove(aluno);
 	}
 
+	public Materia(String nome, int preco, Boolean status) {
+
+
+	}
+
+	public String getNome() {
+		return this.nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public double getPreco() {
+		return this.preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+	public List<Aluno> getAlunos() {
+		return Alunos;
+	}
+
+	public void setAlunos(List<Aluno> alunos) {
+		this.alunos = alunos;
+	}
+
+	public void setAtiva(boolean ativa) {
+		this.ativa = ativa;
+	}
+
+	public boolean isObrigatoria() {
+		return Obrigatoria;
+	}
+
+	public void setObrigatoria(boolean obrigatoria) {
+		this.obrigatoria = obrigatoria;
+	}
+
+	public List<Curso> getCursos() {
+		return cursos;
+	}
+
+	public void setCursos(List<Curso> cursos) {
+		this.cursos = cursos;
+	}
+
+	public List<Professor> getProfessores() {
+		return professores;
+	}
+
+	public void addProfessores(Professor professor) {
+		this.professores.add(professor);
+	}
+
+	@Override
+	public String toString() {
+		return ("Nome da materia: " + this.Nome + " Obrigatoria: " + this.Obrigatoria);
+	}
 }

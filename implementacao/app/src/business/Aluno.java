@@ -1,8 +1,5 @@
 package business;
 
-import org.junit.jupiter.api.function.Executable;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Aluno extends Usuario implements Gerenciavel {
@@ -21,6 +18,9 @@ public class Aluno extends Usuario implements Gerenciavel {
 	private Observer observer;
 
 	public Aluno(Semestre semestre) {
+		super(nome, senha);
+		this.setCurso(curso);
+
 		observers = new ArrayList<>();
 		materiasObrigatoriasMatriculadas = new ArrayList<>();
 		optativasMatriculadas = new ArrayList<>();
@@ -50,7 +50,6 @@ public class Aluno extends Usuario implements Gerenciavel {
 			return true;
 		}
 
-		return false;
 	}
 
 	public boolean matricular(Materia materia) throws IndexOutOfBoundsException {
@@ -73,5 +72,24 @@ public class Aluno extends Usuario implements Gerenciavel {
 
 	public void setValorAPAgar(long valorAPagar) {
 		this.valorAPagar = valorAPagar;
+	}
+	public String toString(){
+		return ("Nome: " + super.getNome() + " Ocupação: aluno");
+	}
+
+	public Curso getCurso() {
+		return Curso;
+	}
+
+	public void setCurso(Curso curso) {
+		Curso = curso;
+	}
+
+	public int getMATRICULA() {
+		return MATRICULA;
+	}
+
+	public void setMATRICULA(int mATRICULA) {
+		MATRICULA = mATRICULA;
 	}
 }

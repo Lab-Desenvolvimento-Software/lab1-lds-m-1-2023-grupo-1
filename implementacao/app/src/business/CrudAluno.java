@@ -1,13 +1,20 @@
 package business;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CrudAluno implements Crud {
 
-	public boolean casdastrar(Gerenciavel gerenciavel) {
-		return false;
-	}
+	//Esses list vão sumir depois de ter os arquivos salvos
+	private List<Gerenciavel> lista;
 
+	public CrudAluno(){
+		lista = new ArrayList<Gerenciavel>();
+	}
 	public boolean cadastrar(Gerenciavel gerenciavel) {
-		return false;
+		((Aluno)gerenciavel).setMATRICULA(lista.size());
+		lista.add(gerenciavel);
+		return true;
 	}
 
 	public boolean alterar(Gerenciavel gerenciavel) {
