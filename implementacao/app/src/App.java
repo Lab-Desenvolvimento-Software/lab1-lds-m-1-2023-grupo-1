@@ -85,29 +85,39 @@ public class App {
         }
         // PERSISTIR MENU DO USUÁRIO COM OS RESPECTIVOS DADOS;
 
-        while (menuUsuario == true) {
-            System.out.println(
-                    "Bem-vindo, " + usuarioLogado.getNome() + "!" + " || Tipo de conta: " + tipoUsuario(usuarioLogado)
-                            + "");
+        System.out.println(
+                "Bem-vindo, " + usuarioLogado.getNome() + "!" + " || Tipo de conta: " + tipoUsuario(usuarioLogado)
+                        + "");
 
-            if (tipoUsuario(usuarioLogado) == "Secretária") {
+        if (tipoUsuario(usuarioLogado) == "Secretária") {
+            while (menuUsuario == true) {
                 System.out.println("");
                 System.out.println("");
-                System.out.println("OK");
+                System.out.println("continua..");
+                menuUsuario = false;
             }
+        }
 
-            if (tipoUsuario(usuarioLogado) == "Aluno") {
+        if (tipoUsuario(usuarioLogado) == "Aluno") {
+            while (menuUsuario == true) {
                 System.out.println("");
                 System.out.println("");
-                System.out.println("OK");
+                System.out.println("continua..");
+                menuUsuario = false;
             }
-            if (tipoUsuario(usuarioLogado) == "Professor") {
+        }
+        if (tipoUsuario(usuarioLogado) == "Professor") {
+            while (menuUsuario == true) {
                 System.out.println("");
                 System.out.println("");
-                System.out.println("OK");
-            } else {
-                System.out.println("Tipo de conta indefinido");
+                System.out.println("continua..");
+                menuUsuario = false;
             }
+        } else {
+            System.out.println("Tipo de conta indefinido");
+            System.out.println("");
+            menuUsuario = false;
+            menuLogin = true;
 
         }
 
@@ -118,7 +128,7 @@ public class App {
     private static ObjectOutputStream outputFile;
 
     public static void iniciarArquivoUsuarios() throws IOException {
-        file = new File("lab1-lds-m-1-2023-grupo-1/implementacao/app/src/arquivos/usuarios.txt.bin");
+        file = new File("implementacao/app/src/arquivos/usuarios.txt.bin");
         if (!file.exists()) {
             fos = new FileOutputStream(file, false);
             outputFile = new ObjectOutputStream(fos);
