@@ -5,17 +5,15 @@ import java.util.List;
 
 public class Secretaria extends Usuario {
 
-	private int ID_SECRETARIA;
 	private CrudAluno crudAluno;
 	private CrudProfessor crudProfessor;
 	private CrudMateria crudMateria;
-	//Esses list vão sumir depois de ter os arquivos salvos
+	// Esses list vão sumir depois de ter os arquivos salvos
 	private List<Gerenciavel> usuarios;
 	public List<Gerenciavel> materias;
 
-	public Secretaria(String nome, String senha, int id) {
+	public Secretaria(String nome, String senha) {
 		super(nome, senha);
-		this.ID_SECRETARIA = id;
 		usuarios = new ArrayList<Gerenciavel>();
 		materias = new ArrayList<Gerenciavel>();
 	}
@@ -26,28 +24,28 @@ public class Secretaria extends Usuario {
 			if (crudAluno == null) {
 				crudAluno = new CrudAluno();
 			}
-			if(crudAluno.cadastrar(gerenciavel)) {
+			if (crudAluno.cadastrar(gerenciavel)) {
 				usuarios.add(gerenciavel);
 			}
-			
+
 		} else {
 			if (gerenciavel.getClass().getTypeName() == "business.Professor") {
 				if (crudProfessor == null) {
 					crudProfessor = new CrudProfessor();
 				}
-				if(crudProfessor.cadastrar(gerenciavel)) {
+				if (crudProfessor.cadastrar(gerenciavel)) {
 					usuarios.add(gerenciavel);
 				}
-				
-			}else {
+
+			} else {
 				if (gerenciavel.getClass().getTypeName() == "business.Materia") {
 					if (crudMateria == null) {
 						crudMateria = new CrudMateria();
 					}
-					if(crudMateria.cadastrar(gerenciavel)) {
+					if (crudMateria.cadastrar(gerenciavel)) {
 						materias.add(gerenciavel);
 					}
-					
+
 				}
 			}
 		}
@@ -72,8 +70,13 @@ public class Secretaria extends Usuario {
 	public List<Gerenciavel> getAllUsers() {
 		return usuarios;
 	}
+
 	public List<Gerenciavel> getAllMaterias() {
 		return materias;
+	}
+
+	public String toString() {
+		return (this.getNome() + " " + super.getId());
 	}
 
 }

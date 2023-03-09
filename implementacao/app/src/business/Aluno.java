@@ -5,8 +5,6 @@ import java.util.List;
 
 public class Aluno extends Usuario implements Gerenciavel {
 
-	private int MATRICULA;
-
 	private Semestre semestre;
 
 	private Curso curso;
@@ -36,7 +34,7 @@ public class Aluno extends Usuario implements Gerenciavel {
 	}
 
 	public void cancelarMateria(Materia materia) {
-		if(materiasObrigatoriasMatriculadas.contains(materia) || optativasMatriculadas.contains(materia)) {
+		if (materiasObrigatoriasMatriculadas.contains(materia) || optativasMatriculadas.contains(materia)) {
 			materia.removeAluno(this);
 			materiasObrigatoriasMatriculadas.remove(materia);
 			optativasMatriculadas.remove(materia);
@@ -44,7 +42,7 @@ public class Aluno extends Usuario implements Gerenciavel {
 	}
 
 	private boolean quantMateriasMatriculadas() {
-		if((materiasObrigatoriasMatriculadas.size() < 4) && (optativasMatriculadas.size() < 2)) {
+		if ((materiasObrigatoriasMatriculadas.size() < 4) && (optativasMatriculadas.size() < 2)) {
 			return true;
 		}
 
@@ -52,10 +50,10 @@ public class Aluno extends Usuario implements Gerenciavel {
 	}
 
 	public boolean matricular(Materia materia) throws IndexOutOfBoundsException {
-		if(quantMateriasMatriculadas()) {
+		if (quantMateriasMatriculadas()) {
 			materia.addAluno(this);
 
-			if(materia.isObrigatoria()) {
+			if (materia.isObrigatoria()) {
 				materiasObrigatoriasMatriculadas.add(materia);
 			} else {
 				optativasMatriculadas.add(materia);
@@ -72,8 +70,9 @@ public class Aluno extends Usuario implements Gerenciavel {
 	public void setValorAPAgar(double valorAPagar) {
 		this.valorAPagar = valorAPagar;
 	}
-	public String toString(){
-		return ("Nome: " + super.getNome() + " Ocupação: aluno");
+
+	public String toString() {
+		return ("Nome: " + super.getNome() + " Ocupação: aluno" + " " + super.getId());
 	}
 
 	public Curso getCurso() {
@@ -84,11 +83,4 @@ public class Aluno extends Usuario implements Gerenciavel {
 		this.curso = curso;
 	}
 
-	public int getMATRICULA() {
-		return MATRICULA;
-	}
-
-	public void setMATRICULA(int matricula) {
-		MATRICULA = matricula;
-	}
 }
