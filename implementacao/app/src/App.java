@@ -136,16 +136,16 @@ public class App {
     }
 
     public static void addUsuario(Usuario usuario) {
-        try {
+        try (FileOutputStream fos = new FileOutputStream(file, true);
+                ObjectOutputStream outputFile = new ObjectOutputStream(fos)) {
             outputFile.writeObject(usuario);
-
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("ERRO ao gravar o usuário '" + usuario.getNome() + "' no disco!");
             e.printStackTrace();
         }
     }
 
-    public static Usuario getUsuario(String id) {
+    public static Usuario getUsuario(String id) throws IOException {
         Usuario usuario = null;
 
         try (FileInputStream fis = new FileInputStream(file);
