@@ -4,7 +4,8 @@
 ## Histórias de Usuário
 
 - Eu, como usuário, desejo possuir um login e senha para maior segurança dos meus dados.
-- Eu, como aluno, desejo me matricular nas minhas disciplinas para concluir o curso.
+- Eu, como aluno, desejo me matricular nas minhas disciplinas obrigatórias para concluir o curso.
+- Eu, como aluno, desejo me matricular nas minhas disciplinas optativas para concluir o curso.
 - Eu, como aluno, desejo pagar minhas disciplinas matriculadas para continuar cursando-as.
 - Eu, como aluno, desejo cancelar minhas disciplinas matriculadas para evitar transtornos.
 - Eu, como professor, desejo visualizar os alunos matriculados na minha disciplina para ter um controle da turma.
