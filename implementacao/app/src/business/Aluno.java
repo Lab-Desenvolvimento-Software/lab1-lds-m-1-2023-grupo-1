@@ -5,8 +5,6 @@ import java.util.List;
 
 public class Aluno extends Usuario implements Gerenciavel {
 
-	private Semestre semestre;
-
 	private Curso curso;
 
 	private List<Observer> observers;

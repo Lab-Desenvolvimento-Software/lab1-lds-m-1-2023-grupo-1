@@ -1,15 +1,6 @@
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.lang.reflect.Array;
-import java.nio.file.FileAlreadyExistsException;
-import java.nio.file.SecureDirectoryStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
+
 
 import business.Aluno;
 import business.CrudMateria;
@@ -88,9 +79,10 @@ public class App {
                     System.out.println("\nEscolha uma opção:");
                     System.out.println("1. Cadastrar Aluno/Professor");
                     System.out.println("2. Cadastrar Matéria");
-                    System.out.println("2. Alterar");
-                    System.out.println("3. Excluir");
-                    System.out.println("4. Gerar Currículo");
+                    System.out.println("3. Cadastrar Curso");
+                    System.out.println("4. Alterar");
+                    System.out.println("5. Excluir");
+                    System.out.println("6. Gerar Currículo");
                     int escolhaMenu3 = scanner.nextInt();
                     if(escolhaMenu3 == 1){
                         while(menuCadastroSecretaria){
@@ -139,11 +131,19 @@ public class App {
                                 Materia materia = new Materia(nomeMateria, precoMateria, true, true);
                                 novaSecretaria.criar(materia);
                                 System.out.println("Matéria adicionada com sucesso!");
+                                System.out.println("Digite o nome do curso que essa matéria será adicionada:");
+                                String nomeCurso = scanner.next();
+                                Curso cursoSelecionado = novaSecretaria.getCurso(nomeCurso);
+                                cursoSelecionado.adicionarMateria(materia);
                             }
                             if(escolhaObrigatoria == 2){
                                 Materia materia = new Materia(nomeMateria, precoMateria, true, false);
                                 novaSecretaria.criar(materia);
                                 System.out.println("Matéria adicionada com sucesso!");
+                                System.out.println("Digite o nome do curso que essa matéria será adicionada:");
+                                String nomeCurso = scanner.next();
+                                Curso cursoSelecionado = novaSecretaria.getCurso(nomeCurso);
+                                cursoSelecionado.adicionarMateria(materia);
                             }
                         }
                     }
@@ -200,18 +200,7 @@ public class App {
                 }
                 menuUsuario = false;
             }
-        } else {
-            System.out.println("Tipo de conta indefinido");
-            System.out.println("");
-            menuUsuario = false;
-            menuLogin = true;
-
         }
-
-    }
-
-    public void funcoesSecretaria(Secretaria secretaria){
-
     }
 
     private static File file;

@@ -11,11 +11,13 @@ public class Secretaria extends Usuario {
 	// Esses list vão sumir depois de ter os arquivos salvos
 	private List<Gerenciavel> usuarios;
 	public List<Gerenciavel> materias;
+	public static List<Curso> cursos;
 
 	public Secretaria(String nome, String senha) {
 		super(nome, senha);
 		usuarios = new ArrayList<Gerenciavel>();
 		materias = new ArrayList<Gerenciavel>();
+		cursos = new ArrayList<Curso>();
 	}
 
 	public void criar(Gerenciavel gerenciavel) {
@@ -51,6 +53,20 @@ public class Secretaria extends Usuario {
 		}
 	}
 
+	public Curso getCurso(String nome){
+		for(Curso curso : cursos){
+			if(curso.getNome().compareTo(nome)==0){
+				return curso;
+			}
+		}
+		return null;
+	}
+
+	public void criarCurso(String nome, int qtdCreditos){
+		Curso curso = new Curso(nome,qtdCreditos);
+		cursos.add(curso);
+	}
+
 	public void alterar(Gerenciavel gerenciavel) {
 
 	}
@@ -61,10 +77,6 @@ public class Secretaria extends Usuario {
 
 	public boolean criarSemestre(int numSemestre) {
 		return false;
-	}
-
-	public void vincularSemestreAoCurso(Semestre semestre, Curso curso) {
-
 	}
 
 	public List<Gerenciavel> getAllUsers() {
